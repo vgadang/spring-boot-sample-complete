@@ -19,19 +19,19 @@ import com.mongodb.MongoClient;
 @EnableMongoRepositories(basePackages={"com.aol.demo.mongo.repository"})
 public class MongoConfiguration extends AbstractMongoConfiguration {
 
-	@Value("${mongo.dbname:sample}")
+	@Value("${mongo.dbname}")
 	private String databaseName;
 
-	@Value("${mongo.username:}")
+	@Value("${mongo.username}")
 	private String username;
 	
-	@Value("${mongo.password:}")
+	@Value("${mongo.password}")
 	private String password;
 
-	@Value("${mongo.host:localhost}")
+	@Value("${mongo.host}")
 	private String host;
 
-	@Value("${mongo.port:27017}")
+	@Value("${mongo.port")
 	private int port;
 
 	@Bean

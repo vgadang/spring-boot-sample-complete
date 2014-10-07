@@ -19,22 +19,25 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class JpaRepositoryConfiguration {
 
-	@Value("${mysql.database.url:jdbc:mysql://localhost:3306/sample}")
-	private String mysqlDatabaseUrl;
+	@Value("${database.driver.class.name}")
+	private String dbDriverClassName;
 	
-	@Value("${mysql.database.username:root}")
-	private String mysqlUserName;
+	@Value("${database.url}")
+	private String dbUrl;
 	
-	@Value("${mysql.database.password:TAfNdRUn}")
-	private String mysqlPassword;
+	@Value("${database.username}")
+	private String dbUserName;
+	
+	@Value("${database.password}")
+	private String dbPassword;
 	
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-	    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-	    dataSource.setUrl(mysqlDatabaseUrl);
-	    dataSource.setUsername(mysqlUserName);
-	    dataSource.setPassword(mysqlPassword);
+	    dataSource.setDriverClassName(dbDriverClassName);
+	    dataSource.setUrl(dbUrl);
+	    dataSource.setUsername(dbUserName);
+	    dataSource.setPassword(dbPassword);
 	    return dataSource;
 	}
 

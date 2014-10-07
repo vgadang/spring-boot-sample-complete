@@ -15,6 +15,7 @@ public class Preferences {
 	private String homePage;
 	private String color;
 	private String movie;
+	
 	public String getScreenName() {
 		return screenName;
 	}
