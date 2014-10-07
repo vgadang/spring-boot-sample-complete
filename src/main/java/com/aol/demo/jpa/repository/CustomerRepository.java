@@ -13,16 +13,18 @@ public interface CustomerRepository extends JpaRepository<Customer, String>{
 
 	/**
 	 * Declared Query
-	 * @param lastName
-	 * @return
 	 */
 	List<Customer> findByLastName(String lastName);
 
 	/**
 	 * Annotated sql query
-	 * @param firstName
-	 * @return
 	 */
 	@Query("select c from Customer c where c.lastName = ?1")
 	List<Customer> findByLastNameUsingSql(String lastName);
+	
+	/**
+	 * Declared Query for last name starting with
+	 */
+	List<Customer> findByLastNameStartingWith(String lastNamePrefix);
+	
 }
