@@ -1,10 +1,13 @@
 package com.aol.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aol.demo.model.Preferences;
@@ -26,4 +29,10 @@ public class PreferencesRestController {
 	public Preferences createCustomer(@RequestBody Preferences preferences) {
 		return preferencesService.createPreference(preferences);
 	}
+
+	@RequestMapping(method=RequestMethod.GET)
+	public List<Preferences> getCustomers(@RequestParam("color") String color) {
+		return preferencesService.getPreferencesByColer(color);
+	}
+
 }

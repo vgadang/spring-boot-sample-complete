@@ -1,5 +1,7 @@
 package com.aol.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ public class PreferencesServiceImpl implements PreferencesService {
 	@Override
 	public Preferences createPreference(Preferences preferences) {
 		return preferencesRepository.save(preferences);
+	}
+
+	@Override
+	public List<Preferences> getPreferencesByColer(String color) {
+		return preferencesRepository.findByTheCustomersColor(color);
 	}
 
 }
