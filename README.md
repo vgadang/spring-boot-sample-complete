@@ -1,15 +1,33 @@
-# What you need to get started
+## What you'll need
 JDK 1.6 +
 
-# Building the app
-
+## Build the app
 ```
 sh gradlew build
 ```
 
-# Generate eclipse settings
+## Run the app
+```
+java -jar build/lib/*.war
+```
 
+## Generate eclipse settings
 ```
 sh gradlew eclipse
 ```
 
+## Sample Controller
+```java
+@RestController
+public class CustomerRestController {
+
+	@Autowired
+	private CustomerService customerService;
+	
+	@RequestMapping(value="/rest/customers/{sn}", method=RequestMethod.GET)
+	public Customer getCustomer(@PathVariable("sn") String sn) {
+		return customerService.getCustomer(sn);
+	}
+	
+}
+```
