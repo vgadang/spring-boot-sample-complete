@@ -31,7 +31,7 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 	@Value("${mongo.host}")
 	private String host;
 
-	@Value("${mongo.port")
+	@Value("${mongo.port}")
 	private int port;
 
 	@Bean
