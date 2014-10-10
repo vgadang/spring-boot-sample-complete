@@ -32,7 +32,7 @@ public class PreferencesRestController {
 
 	@RequestMapping(method=RequestMethod.GET)
 	public List<Preferences> getCustomers(@RequestParam("color") String color) {
-		return preferencesService.getPreferencesByColer(color);
+		return preferencesService.getPreferencesByColor(color);
 	}
 
 }

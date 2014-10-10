@@ -17,7 +17,7 @@ public class CatalogRestController {
 	private CatalogService catalogService;
 	
 	@RequestMapping(value="/{sku}", method=RequestMethod.GET)
-	public Product getCustomer(@PathVariable("sku") String sku) {
+	public Product getProduct(@PathVariable("sku") String sku) {
 		return catalogService.getProduct(sku);
 	}
 

@@ -10,6 +10,6 @@ public interface PreferencesService {
 
 	Preferences createPreference(Preferences preferences);
 
-	List<Preferences> getPreferencesByColer(String color);
+	List<Preferences> getPreferencesByColor(String color);
 
 }

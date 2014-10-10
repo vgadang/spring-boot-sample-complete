@@ -24,7 +24,7 @@ public class PreferencesServiceImpl implements PreferencesService {
 	}
 
 	@Override
-	public List<Preferences> getPreferencesByColer(String color) {
+	public List<Preferences> getPreferencesByColor(String color) {
 		return preferencesRepository.findByTheCustomersColor(color);
 	}
 
