@@ -18,7 +18,7 @@ sh gradlew eclipse
 
 ## Generate intellij settings
 ```
-sh gradlew eclipse
+sh gradlew idea
 ```
 
 ## Sample Controller
