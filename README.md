@@ -16,6 +16,11 @@ java -jar build/lib/*.war
 sh gradlew eclipse
 ```
 
+## Generate intellij settings
+```
+sh gradlew eclipse
+```
+
 ## Sample Controller
 ```java
 @RestController
@@ -30,4 +35,12 @@ public class CustomerRestController {
 	}
 	
 }
+```
+
+## Add your own handler for a request uri 
+```java
+	@RequestMapping(value="/rest/customers/{sn}", method=RequestMethod.GET)
+	public Customer getCustomer(@PathVariable("sn") String sn) {
+		return customerService.getCustomer(sn);
+	}
 ```
